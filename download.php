@@ -1,18 +1,21 @@
 <?php
 
-// Get the video URL from the form
-$video_url = $_POST['video_url'];
+$video_url = $_POST["video_url"];
+$quality = $_POST["quality"];
 
-// Get the video quality from the form
-$quality = $_POST['quality'];
+$video_id = parse_url($video_url, PHP_URL_QUERY)["v"];
 
-// Use the YouTube API to download the video
-$video = AIzaSyC_zFJJ7Y3S7eZFLOPXRDeJNRtDcKE0zF4($video_url, $quality);
+$yt_api_key = "AIzaSyC_zFJJ7Y3S7eZFLOPXRDeJNRtDcKE0zF4";
 
-// Save the video to the user's computer
-file_put_contents($_POST['filename'], $video);
+$yt_downloader = new YouTubeDownloader($yt_api_key);
 
-// Redirect the user to the download page
-header('Location: download.php');
+$video_info = $yt_downloader->getVideoInfo($video_id);
+
+$video_file = $yt_downloader->downloadVideo($video_info, $quality);
+
+header("Content-disposition: attachment; filename=$video_id.mp4");
+header("Content-type: video/mp4");
+
+echo $video_file;
 
 ?>
