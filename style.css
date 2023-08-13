@@ -1,36 +1,33 @@
 body {
-  font-family: sans-serif;
-}
-
-.container {
-  width: 500px;
-  margin: 0 auto;
+background-color: #ffffff;
+font-family: sans-serif;
 }
 
 h1 {
-  text-align: center;
+text-align: center;
 }
 
 form {
-  margin-top: 20px;
+width: 50%;
+margin: 0 auto;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
 }
 
 select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+background-color: #000000;
+color: #ffffff;
+padding: 10px;
+border: none;
+cursor: pointer;
 }
