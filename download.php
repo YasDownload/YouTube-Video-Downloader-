@@ -7,7 +7,7 @@ $video_url = $_POST['video_url'];
 $quality = $_POST['quality'];
 
 // Use the YouTube API to download the video
-$video = youtube_download($video_url, $quality);
+$video = AIzaSyC_zFJJ7Y3S7eZFLOPXRDeJNRtDcKE0zF4($video_url, $quality);
 
 // Save the video to the user's computer
 file_put_contents($_POST['filename'], $video);
